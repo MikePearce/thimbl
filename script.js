@@ -1,3 +1,4 @@
+
 //EXTEND WEB STORAGE TO SUPPORT JSON
 Storage.prototype.setObject = function(key,value) {
     this.setItem(key, JSON.stringify(value));
@@ -188,7 +189,7 @@ profile.get = function() {
         $('td#website').html('<a href="' + profile.website + '">' + profile.website + '</a>');
         $('td#email').html(profile.email);
         $('td#mobile').html(profile.mobile);
-        $('#profile').prepend('<img src="' + profile.avatar + '" alt="' + profile.name + '" />');
+        $('#profile').prepend('<img src="http://www.gravatar.com/avatar/' + MD5(profile.email) + '?s=140" alt="' + profile.name + '" />');
     }
     profileWorker.postMessage(localStorage.getItem('plan'));
 
